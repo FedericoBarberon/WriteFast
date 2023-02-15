@@ -1,0 +1,16 @@
+.input {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  font-size: 25px;
+  border: none;
+  outline: 2px solid transparent;
+}
+
+.input.success {
+  outline-color: green;
+}
+
+.input.error {
+  outline-color: red;
+}
