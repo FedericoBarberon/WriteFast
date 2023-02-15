@@ -1,0 +1,20 @@
+.wordsVisor {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  color: black;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.word {
+  color: gray;
+}
+
+.word.actual {
+  color: black;
+  font-weight: bold;
+}
