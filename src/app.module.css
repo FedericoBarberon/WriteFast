@@ -1,0 +1,80 @@
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 35px;
+  font-style: italic;
+  color: var(--main-color);
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 20px;
+}
+
+.timeSelect {
+  display: flex;
+  gap: 20px;
+}
+
+.wordsVisor {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  color: black;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.inputContainer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.input {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  font-size: 25px;
+  border: none;
+  outline: 1px solid transparent;
+}
+
+.input.success {
+  outline-color: green;
+}
+
+.input.error {
+  outline-color: red;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid var(--main-color);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.word {
+  color: gray;
+}
+
+.word.actual {
+  color: black;
+  font-weight: bold;
+}
