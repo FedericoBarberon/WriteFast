@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import classes from "./app.module.css";
+import Input from "./components/Input/Input";
 import Loading from "./components/Loading/Loading";
 import Results from "./components/Results/Results";
+import SelectTime from "./components/SelectTime/SelectTime";
+import WordsVisor from "./components/WordsVisor/WordsVisor";
 import { getWords } from "./services/getWords";
-
-const timesOptions = [30, 60, 120];
 
 export default function App() {
   const [started, setStarted] = useState(false);
@@ -83,25 +84,12 @@ export default function App() {
 
       {started ? (
         <>
-          <div className={classes.wordsVisor}>
-            {words.map((word, index) => (
-              <span
-                key={index}
-                className={`${classes.word} ${
-                  index === 0 ? classes.actual : ""
-                }`}
-              >
-                {word}
-              </span>
-            ))}
-          </div>
-          <div className={classes.inputContainer}>
-            <input
-              className={`${classes.input} ${classes[writeStatus] ?? ""}`}
-              value={buffer}
-              onChange={handleChange}
-              autoFocus
-              placeholder="Escribe la palabra y luego un espacio"
+          <WordsVisor words={words} />
+          <div className={classes.row}>
+            <Input
+              buffer={buffer}
+              handleChange={handleChange}
+              writeStatus={writeStatus}
             />
             <span className={classes.time}>{time}s</span>
             <button className="button" onClick={resetGame}>
@@ -111,20 +99,10 @@ export default function App() {
         </>
       ) : (
         <>
-          <div className={classes.timeSelect}>
-            <span>Tiempo</span>
-            <select
-              value={initialTime}
-              onChange={(e) => setInitialTime(e.target.value)}
-              defaultValue={initialTime}
-            >
-              {timesOptions.map((time) => (
-                <option key={time} value={time}>
-                  {time}s
-                </option>
-              ))}
-            </select>
-          </div>
+          <SelectTime
+            initialTime={initialTime}
+            handleChange={(e) => setInitialTime(e.target.value)}
+          />
           <button className="button" onClick={startGame}>
             Empezar
           </button>
