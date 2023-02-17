@@ -3,7 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -48,6 +47,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  color: white;
 }
 
 .button:hover {
@@ -56,4 +56,10 @@
 
 .button:active {
   filter: brightness(90%);
+}
+
+@media (max-width: 500px) {
+  .button {
+    cursor: default;
+  }
 }

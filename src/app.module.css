@@ -25,6 +25,7 @@
   gap: 1rem;
   justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .time {
@@ -34,4 +35,10 @@
   border: 1px solid var(--main-color);
   border-radius: 4px;
   font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
 }
