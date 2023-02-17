@@ -1,15 +1,14 @@
-import classes from "./selectTime.module.css";
+import classes from './selectTime.module.css'
 
-const timesOptions = [30, 60, 120];
+const timesOptions = [30, 60, 120]
 
-export default function SelectTime({ initialTime, handleChange }) {
+export default function SelectTime ({ initialTime, handleChange }) {
   return (
     <div className={classes.timeSelect}>
       <span>Tiempo</span>
       <select
         value={initialTime}
         onChange={handleChange}
-        defaultValue={initialTime}
       >
         {timesOptions.map((time) => (
           <option key={time} value={time}>
@@ -18,5 +17,5 @@ export default function SelectTime({ initialTime, handleChange }) {
         ))}
       </select>
     </div>
-  );
+  )
 }
